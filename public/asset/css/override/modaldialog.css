@@ -1,0 +1,8 @@
+.loading-modal {
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 7376;
+}
+
+.loading-modal .modal-dialog {
+	width: 122px;
+}

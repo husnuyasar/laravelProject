@@ -1,0 +1,24 @@
+.navbar {
+  background-color: #00925b !important;
+}
+
+.opener-left-menu {
+  background-color: #00925b !important;
+  box-shadow: 0px 9px 0px 0px #00925b, 0 -9px 0px 0px #00925b, 4px 0 15px -4px rgba(0, 0, 0, 0.16), -4px 0 15px -4px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary, .label-primary, .alert-primary, .badge-primary {
+  background-color: #00925b !important;
+}
+
+.btn-3d.btn-primary, .label-3d.label-primary, .alert-3d.alert-primary {
+  box-shadow: inset 0px 0px 0px #00925b, 0px 5px 0px 0px #00925b, 0px 10px 5px #999 !important;
+}
+
+.btn-raised.btn-primary, .label-raised.label-primary, .alert-raised.alert-primary {
+  box-shadow: inset 0px 0px 0px #00623e, 0px 5px 0px 0px #00623e, 0px 10px 5px #999 !important;
+}
+
+.dashboard-item {
+    background-image: url('/asset/img/dashboard-item-tebarval.png') !important;
+}

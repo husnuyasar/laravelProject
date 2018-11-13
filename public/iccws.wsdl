@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://sistem.alcservis.com/webservices" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://sistem.alcservis.com/webservices">
+<types>	
+<xsd:schema targetNamespace="http://sistem.alcservis.com/webservices">
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+ <xsd:complexType name="DosyaSonuc">
+  <xsd:all>
+   <xsd:element name="DonusKodu" type="xsd:int"/>
+   <xsd:element name="DonusAciklama" type="xsd:string"/>
+   <xsd:element name="DonusParcalar" type="tns:DonusParcalari"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="DonusParcalari">
+  <xsd:complexContent>
+   <xsd:restriction base="SOAP-ENC:Array">
+    <xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:DonusParca[]"/>
+   </xsd:restriction>
+  </xsd:complexContent>
+ </xsd:complexType>
+ <xsd:complexType name="DonusParca">
+  <xsd:all>
+   <xsd:element name="ICCParcaID" type="xsd:string"/>
+   <xsd:element name="ParcaID" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="Evrak">
+  <xsd:all>
+   <xsd:element name="EvrakTipiRefNo" type="xsd:int"/>
+   <xsd:element name="EvrakURL" type="xsd:string"/>
+   <xsd:element name="EvrakAciklama" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="Evraklar">
+  <xsd:complexContent>
+   <xsd:restriction base="SOAP-ENC:Array">
+    <xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:Evrak[]"/>
+   </xsd:restriction>
+  </xsd:complexContent>
+ </xsd:complexType>
+ <xsd:complexType name="Parca">
+  <xsd:all>
+   <xsd:element name="ParcaRefNo" type="xsd:int"/>
+   <xsd:element name="ParcaAdi" type="xsd:string"/>
+   <xsd:element name="ParcaOrjKodu" type="xsd:string"/>
+   <xsd:element name="ParcaFiyati" type="xsd:double"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="Parcalar">
+  <xsd:complexContent>
+   <xsd:restriction base="SOAP-ENC:Array">
+    <xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:Parca[]"/>
+   </xsd:restriction>
+  </xsd:complexContent>
+ </xsd:complexType>
+</xsd:schema>
+</types>
+<message name="DosyayiGonderRequest">
+  <part name="KullaniciAdi" type="xsd:string" />
+  <part name="Sifre" type="xsd:string" />
+  <part name="SigortaSirketiRefNo" type="xsd:int" />
+  <part name="DosyaNo" type="xsd:string" />
+  <part name="ICCDosyaRefNo" type="xsd:string" />
+  <part name="PoliceNo" type="xsd:string" />
+  <part name="PoliceBaslangicTarihi" type="xsd:string" />
+  <part name="PoliceBitisTarihi" type="xsd:string" />
+  <part name="PoliceBransTipi" type="xsd:string" />
+  <part name="AracMarkaAdi" type="xsd:string" />
+  <part name="AracModelAdi" type="xsd:string" />
+  <part name="AracModelYili" type="xsd:int" />
+  <part name="AracSasiNo" type="xsd:string" />
+  <part name="AracMotorNo" type="xsd:string" />
+  <part name="EksperAdi" type="xsd:string" />
+  <part name="ServisinAdi" type="xsd:string" />
+  <part name="ServisTel" type="xsd:string" />
+  <part name="ServisAdres" type="xsd:string" />
+  <part name="ServisIlce" type="xsd:string" />
+  <part name="ServisIlKodu" type="xsd:int" />
+  <part name="BayiRefNo" type="xsd:int" />
+  <part name="DosyaParcalari" type="tns:Parcalar" />
+  <part name="DosyaEvraklari" type="tns:Evraklar" />
+  <part name="AracPlaka" type="xsd:string" />
+  <part name="EksperRefNo" type="xsd:string" />
+  <part name="SigortaliAdi" type="xsd:string" />
+  <part name="SigortaliSoyadi" type="xsd:string" />
+  <part name="SigortaliTCKimlikNo" type="xsd:string" />
+  <part name="SigortaliVergiNo" type="xsd:string" />
+  <part name="SigortaliVergiDairesi" type="xsd:string" />
+  <part name="DosyaSorumlusu" type="xsd:string" />
+  <part name="DosyaSorumlusuEposta" type="xsd:string" /></message>
+<message name="DosyayiGonderResponse">
+  <part name="return" type="tns:DosyaSonuc" /></message>
+<portType name="ICCListenerServicePortType">
+  <operation name="DosyayiGonder">
+    <input message="tns:DosyayiGonderRequest"/>
+    <output message="tns:DosyayiGonderResponse"/>
+  </operation>
+</portType>
+<binding name="ICCListenerServiceBinding" type="tns:ICCListenerServicePortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="DosyayiGonder">
+    <soap:operation soapAction="http://sistem.alcservis.com/webservices#DosyayiGonder" style="rpc"/>
+    <input><soap:body use="encoded" namespace="http://sistem.alcservis.com/webservices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="http://sistem.alcservis.com/webservices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="ICCListenerService">
+  <port name="ICCListenerServicePort" binding="tns:ICCListenerServiceBinding">
+    <soap:address location="http://sistem.alcservis.com/webservices/iccws?WSDL"/>
+  </port>
+</service>
+</definitions>

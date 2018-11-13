@@ -1,0 +1,10 @@
+.form-signin-wrapper {
+	background: #C3C3C3 !important;
+}
+.form-signin .panel {
+	background: #717273;
+	color: #fff;
+	padding: 10px;
+	border: none !important;
+	box-shadow: 0 7px 16px #5F6061, 0 4px 5px #8C8D8E;
+}

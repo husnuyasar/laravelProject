@@ -1,0 +1,20 @@
+.navbar {
+  background-color: #fa6b02 !important;
+}
+
+.opener-left-menu {
+  background-color: #fa6b02 !important;
+  box-shadow: 0px 9px 0px 0px #fa6b02, 0 -9px 0px 0px #fa6b02, 4px 0 15px -4px rgba(0, 0, 0, 0.16), -4px 0 15px -4px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary, .label-primary, .alert-primary, .badge-primary {
+  background-color: #fa6b02 !important;
+}
+
+.btn-3d.btn-primary, .label-3d.label-primary, .alert-3d.alert-primary {
+  box-shadow: inset 0px 0px 0px #ba5001, 0px 5px 0px 0px #ba5001, 0px 10px 5px #999 !important;
+}
+
+.dashboard-item {
+    background-image: url('/asset/img/dashboard-item-sixt.png') !important;
+}

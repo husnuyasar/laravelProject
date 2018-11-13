@@ -1,0 +1,52 @@
+#file-photos ul li{
+  float: left;
+  padding-right: 10px;
+}
+#file-photos .badges-v1{
+  width: 200px;
+  height: 250px;
+}
+#file-photos dl{
+  padding: 5px;
+}
+#file-photos dl dt, #file-photos dl dd{
+  float: left;
+  width: 50%;
+}
+#file-messages .nav-tabs-v6 li{
+  padding-top: 15px;
+}
+#file-messages .nav-tabs-v6 > li.active:after {
+  border-width: 20px;
+  margin-left: -20px;
+}
+#file-messages .timeline:before, #file-messages-ro-messages .timeline:before {
+  left: 93%;
+}
+#file-messages .timeline > li > .timeline-panel, #file-messages-ro-messages .timeline > li > .timeline-panel {
+  width: 90%;
+}
+#file-timeline .list-timeline-section {
+  padding: 0;
+}
+
+.badges-v1 {
+	overflow: hidden;
+}
+
+.badges-v1 img {
+	height: 150px;
+	display: block;
+	margin: 0 auto;
+}
+
+.part-summary-display {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.part-summary-display .btn hr {
+	margin: 0;
+}
+.part-summary-display .btn.btn-circle {
+	font-size: 2em;
+}
